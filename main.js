@@ -3,13 +3,15 @@ const btn = document.querySelector('.btn')
 const elBox = document.querySelector('.box')
 let color = '#'
 
-btn.addEventListener('click', ()=> {
+function colorFnc() {
     for(let i = 0; i < 6; i++) {
-        let num = Math.floor(Math.random() * 17)
+        let num = Math.floor(Math.random() * createColor.length)
         color += createColor[num]
     }
     elBox.style.backgroundColor = color
     elBox.textContent = color
     color = '#'
-})
+    return 0
+}
 
+btn.addEventListener('click', colorFnc)
